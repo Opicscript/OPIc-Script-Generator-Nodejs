@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/dlguswn3659/OPIc-Script-Generator-Server#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "openai": "^3.2.1"
   }
 }
