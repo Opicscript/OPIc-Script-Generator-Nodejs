@@ -11,9 +11,9 @@ async function callChatGPT(prompt) {
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `I want to make OPIc test script. So please convert below korean script to english OPIc test script for advanced! the script's form is '<START> {the converted script} <END>'.\n\n${prompt}`,
+      prompt: `${prompt}`,
       temperature: 0,
-      max_tokens: 100,
+      max_tokens: 1000,
     });
     return response.data.choices[0].text;
   } catch (error) {
