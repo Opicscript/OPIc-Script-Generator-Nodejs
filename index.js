@@ -17,6 +17,7 @@ app.get("/ask", async function (req, res) {
 });
 
 app.post("/ask", async (req, res) => {
+  console.log("hi");
   const prompt = req.body.prompt;
   const response = await callChatGPT(prompt);
 
@@ -28,6 +29,7 @@ app.post("/ask", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
+  console.log("hello");
   //express 앱(app)을 넣고, root directory에 오면,
   res.send("Hello World!"); //"Hello World!" 를 출력되게 해준다.
 });
