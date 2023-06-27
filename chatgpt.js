@@ -10,7 +10,7 @@ async function callChatGPT(prompt) {
     const openai = new OpenAIApi(configuration);
 
     const response = await openai.createCompletion({
-      model: "text-davinci-003",
+      model: "text-ada-001",
       prompt: `${prompt}`,
       temperature: 0,
       max_tokens: 1000,
