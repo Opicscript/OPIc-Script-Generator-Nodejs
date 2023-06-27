@@ -9,13 +9,16 @@ async function callChatGPT(prompt) {
   try {
     const openai = new OpenAIApi(configuration);
 
-    const response = await openai.createCompletion({
+    const response = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      prompt: `${prompt}`,
-      temperature: 0,
-      max_tokens: 1000,
+      messages: [
+        {
+          role: "system",
+          content: prompt,
+        },
+      ],
     });
-    return response.data.choices[0].text;
+    return response.data.choices[0].message.content;
   } catch (error) {
     console.error("Error calling ChatGPT API: ", error);
     return null;
